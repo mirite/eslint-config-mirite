@@ -75,7 +75,7 @@ export const general = [
 			},
 		},
 		rules: {
-			"no-console": ["warn", { allow: ["warn", "error","info"] }], // Warn on console.log as it's usually a debugging tool.
+			"no-console": ["warn", { allow: ["warn", "error", "info"] }], // Warn on console.log as it's usually a debugging tool.
 			"no-unused-vars": "off", // Turn off the default no-unused-vars rule, TS uses its own version.
 			"@typescript-eslint/no-unused-vars": [
 				"error",
@@ -102,7 +102,7 @@ export const general = [
 			".next/**/*",
 			"coverage/**/*",
 			"dist/**/*",
-			"playwright-report/**/*"
+			"playwright-report/**/*",
 		],
 	},
 ];
