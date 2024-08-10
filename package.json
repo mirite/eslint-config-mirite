@@ -3,7 +3,14 @@
 	"version": "0.0.1",
 	"description": "A collection of my favourite eslint rules for TypeScript, React, and Tailwind",
 	"main": "src/index.js",
-	"author": "Jesse Conner",
+	"author": {
+		"name": "Jesse Conner",
+		"email": "me@jesseconner.ca"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mirite/eslint-config-mirite.git"
+	},
 	"license": "MIT",
 	"packageManager": "yarn@4.4.0",
 	"type": "module",
