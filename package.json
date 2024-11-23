@@ -12,7 +12,7 @@
 		"url": "git+https://github.com/mirite/eslint-config-mirite.git"
 	},
 	"license": "MIT",
-	"packageManager": "yarn@4.5.0",
+	"packageManager": "yarn@4.5.2",
 	"type": "module",
 	"scripts": {
 		"format": "prettier --write .",
@@ -25,28 +25,28 @@
 		"tailwindcss"
 	],
 	"dependencies": {
-		"@eslint/compat": "^1.1.1",
-		"@eslint/eslintrc": "^3.1.0",
-		"@eslint/js": "^9.10.0",
-		"eslint": "^9.10.0",
-		"eslint-plugin-import": "^2.30.0",
-		"eslint-plugin-jsdoc": "^50.2.3",
-		"eslint-plugin-react": "^7.36.1",
-		"eslint-plugin-react-hooks": "^4.6.2",
-		"eslint-plugin-tailwindcss": "3.17.3",
-		"globals": "^15.9.0",
-		"tailwindcss": "^3.4.11",
-		"typescript-eslint": "^8.5.0"
+		"@eslint/compat": "^1.2.3",
+		"@eslint/eslintrc": "^3.2.0",
+		"@eslint/js": "^9.15.0",
+		"eslint": "^9.15.0",
+		"eslint-plugin-import": "^2.31.0",
+		"eslint-plugin-jsdoc": "^50.5.0",
+		"eslint-plugin-react": "^7.37.2",
+		"eslint-plugin-react-hooks": "^5.0.0",
+		"eslint-plugin-tailwindcss": "3.17.5",
+		"globals": "^15.12.0",
+		"tailwindcss": "^3.4.15",
+		"typescript-eslint": "^8.15.0"
 	},
 	"peerDependencies": {
 		"eslint": "^9.9.0"
 	},
 	"devDependencies": {
 		"@types/eslint": "^9.6.1",
-		"@types/node": "^22.5.5",
+		"@types/node": "^22.9.3",
 		"prettier": "^3.3.3",
 		"prettier-plugin-jsdoc": "^1.3.0",
-		"typescript": "^5.6.2"
+		"typescript": "^5.7.2"
 	},
 	"files": [
 		"src"
