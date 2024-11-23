@@ -1,6 +1,6 @@
 {
 	"name": "@mirite/eslint-config-mirite",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"description": "A collection of my favourite eslint rules for TypeScript, React, and Tailwind",
 	"main": "src/index.js",
 	"author": {
