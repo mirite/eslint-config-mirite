@@ -1,10 +1,19 @@
 import { fixupConfigRules } from "@eslint/compat";
 import { FlatCompat } from "@eslint/eslintrc";
 import reactLint from "eslint-plugin-react/configs/recommended.js";
+import reactCompiler from "eslint-plugin-react-compiler";
 
 const compat = new FlatCompat();
 
 export const react = [
+	{
+		plugins: {
+			"react-compiler": reactCompiler,
+		},
+		rules: {
+			"react-compiler/react-compiler": "error",
+		},
+	},
 	...fixupConfigRules(
 		...compat.config({
 			extends: ["plugin:react-hooks/recommended"],
@@ -20,7 +29,6 @@ export const react = [
 			"react/jsx-no-leaked-render": "warn",
 			"react/jsx-no-constructed-context-values": "warn",
 			"react/jsx-handler-names": "warn",
-			"react/jsx-no-target-blank": "off",
 			"react/boolean-prop-naming": "warn",
 			"react/button-has-type": "warn",
 			"react/jsx-max-depth": ["warn", { max: 4 }],

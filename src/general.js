@@ -1,5 +1,5 @@
-import { fixupPluginRules } from "@eslint/compat";
 import eslint from "@eslint/js";
+import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
 import importPlugin from "eslint-plugin-import";
 import jsdoc from "eslint-plugin-jsdoc";
 import globals from "globals";
@@ -30,9 +30,15 @@ export const general = [
 	},
 	eslint.configs.recommended,
 	...tseslint.configs.recommended,
-
+	importPlugin.flatConfigs.recommended,
 	{
-		plugins: { import: fixupPluginRules(importPlugin) },
+		settings: {
+			"import/resolver-next": [createTypeScriptImportResolver({})],
+			"import/resolver": {
+				typescript: true,
+				node: true,
+			},
+		},
 		rules: {
 			"import/no-cycle": "error",
 			"import/first": "error",
