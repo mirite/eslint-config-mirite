@@ -1,6 +1,6 @@
 {
 	"name": "@mirite/eslint-config-mirite",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A collection of my favourite eslint rules for TypeScript, React, and Tailwind",
 	"main": "src/index.js",
 	"author": {
@@ -12,7 +12,7 @@
 		"url": "git+https://github.com/mirite/eslint-config-mirite.git"
 	},
 	"license": "MIT",
-	"packageManager": "yarn@4.6.0",
+	"packageManager": "yarn@4.7.0",
 	"type": "module",
 	"scripts": {
 		"format": "prettier --write --cache .",
@@ -26,26 +26,26 @@
 	],
 	"dependencies": {
 		"@eslint/compat": "^1.2.7",
-		"@eslint/eslintrc": "^3.3.0",
-		"@eslint/js": "^9.21.0",
-		"eslint": "^9.21.0",
-		"eslint-import-resolver-typescript": "^3.8.3",
+		"@eslint/eslintrc": "^3.3.1",
+		"@eslint/js": "^9.23.0",
+		"eslint": "^9.23.0",
+		"eslint-import-resolver-typescript": "^4.2.3",
 		"eslint-plugin-import": "^2.31.0",
-		"eslint-plugin-jsdoc": "^50.6.3",
+		"eslint-plugin-jsdoc": "^50.6.9",
 		"eslint-plugin-react": "^7.37.4",
-		"eslint-plugin-react-compiler": "19.0.0-beta-e552027-20250112",
-		"eslint-plugin-react-hooks": "^5.1.0",
+		"eslint-plugin-react-compiler": "19.0.0-beta-aeaed83-20250323",
+		"eslint-plugin-react-hooks": "^5.2.0",
 		"eslint-plugin-tailwindcss": "^3.18.0",
 		"globals": "^16.0.0",
 		"tailwindcss": "3.4.17",
-		"typescript": "^5.7.3",
-		"typescript-eslint": "^8.25.0"
+		"typescript": "^5.8.2",
+		"typescript-eslint": "^8.28.0"
 	},
 	"peerDependencies": {
-		"eslint": "^9.19.0"
+		"eslint": "^9.23.0"
 	},
 	"devDependencies": {
-		"prettier": "^3.5.2",
+		"prettier": "^3.5.3",
 		"prettier-plugin-jsdoc": "^1.3.2"
 	},
 	"files": [
