@@ -15,6 +15,7 @@ export const tailwind = [
 		settings: {
 			tailwindcss: {
 				callees: ["classnames", "clsx", "ctl", "twMerge"],
+				classRegex: "^class(Name)?$",
 				cssFiles: [
 					"**/*.css",
 					"!**/node_modules",
@@ -26,9 +27,8 @@ export const tailwind = [
 				cssFilesRefreshRate: 5_000,
 				removeDuplicates: true,
 				skipClassAttribute: false,
-				whitelist: [],
 				tags: [],
-				classRegex: "^class(Name)?$",
+				whitelist: [],
 			},
 		},
 	},

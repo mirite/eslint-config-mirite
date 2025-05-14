@@ -2,87 +2,70 @@ import eslint from "@eslint/js";
 import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
 import importPlugin from "eslint-plugin-import";
 import jsdoc from "eslint-plugin-jsdoc";
+import perfectionist from "eslint-plugin-perfectionist";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
 export const general = [
+	eslint.configs.recommended,
+	perfectionist.configs["recommended-natural"],
 	jsdoc.configs["flat/recommended-typescript"],
 	{
 		plugins: {
 			jsdoc,
 		},
 		rules: {
-			"jsdoc/tag-lines": "off",
 			"jsdoc/check-template-names": "error",
-			"jsdoc/require-template": "warn",
-			"jsdoc/require-throws": "warn",
 			"jsdoc/require-jsdoc": [
 				"error",
 				{
 					require: {
+						ClassDeclaration: true,
 						FunctionDeclaration: true,
 						MethodDefinition: true,
-						ClassDeclaration: true,
 					},
 				},
 			],
+			"jsdoc/require-template": "warn",
+			"jsdoc/require-throws": "warn",
+			"jsdoc/tag-lines": "off",
 		},
 	},
-	eslint.configs.recommended,
-	...tseslint.configs.recommended,
 	importPlugin.flatConfigs.recommended,
 	{
-		settings: {
-			"import/resolver-next": [createTypeScriptImportResolver({})],
-			"import/resolver": {
-				typescript: true,
-				node: true,
-			},
-		},
 		rules: {
-			"import/no-cycle": "error",
 			"import/first": "error",
 			"import/newline-after-import": "error",
+			"import/no-cycle": "error",
 			"import/no-duplicates": "error",
-			"import/order": [
-				"warn",
-				{
-					groups: [
-						"builtin",
-						"external",
-						"internal",
-						"parent",
-						"sibling",
-						"index",
-					],
-					pathGroupsExcludedImportTypes: ["builtin"],
-					"newlines-between": "always",
-					alphabetize: {
-						order: "asc",
-						caseInsensitive: true,
-					},
-				},
-			],
+		},
+		settings: {
+			"import/resolver": {
+				node: true,
+				typescript: true,
+			},
+			"import/resolver-next": [createTypeScriptImportResolver({})],
 		},
 	},
-	{
-		files: ["**/*.ts", "**/*.tsx"],
-		rules: {
-			"@typescript-eslint/explicit-module-boundary-types": "warn", // Warn on missing return types on exported functions.
-		},
-	},
+	...tseslint.configs.recommendedTypeChecked,
 	{
 		languageOptions: {
-			ecmaVersion: 2022,
-			sourceType: "module",
+			ecmaVersion: 2024,
 			globals: {
 				...globals.node,
 				...globals.browser,
 			},
+			parserOptions: {
+				projectService: true,
+				tsconfigRootDir: import.meta.dirname,
+			},
+			sourceType: "module",
 		},
 		rules: {
-			"no-console": ["warn", { allow: ["warn", "error", "info"] }], // Warn on console.log as it's usually a debugging tool.
-			"no-unused-vars": "off", // Turn off the default no-unused-vars rule, TS uses its own version.
+			"@typescript-eslint/consistent-type-imports": "error",
+			"@typescript-eslint/explicit-module-boundary-types": "warn",
+			"@typescript-eslint/no-explicit-any": "warn",
+			"@typescript-eslint/no-shadow": "error",
 			"@typescript-eslint/no-unused-vars": [
 				"error",
 				{
@@ -91,16 +74,22 @@ export const general = [
 					caughtErrors: "all",
 					caughtErrorsIgnorePattern: "^_",
 					destructuredArrayIgnorePattern: "^_",
-					varsIgnorePattern: "^_",
 					ignoreRestSiblings: true,
+					varsIgnorePattern: "^_",
 				},
 			],
-			"@typescript-eslint/no-explicit-any": "warn",
-			"@typescript-eslint/consistent-type-imports": "error",
+			"no-console": ["warn", { allow: ["warn", "error", "info"] }], // Warn on console.log as it's usually a debugging tool.
 			"no-shadow": "off", // Turn off the default no-shadow rule, TS uses its own version.
-			"@typescript-eslint/no-shadow": "error",
+			"no-unused-vars": "off", // Turn off the default no-unused-vars rule, TS uses its own version.
 		},
 	},
+	...tseslint.config({
+		extends: [tseslint.configs.disableTypeChecked],
+		files: ["**/*.js"],
+		rules: {
+			"@typescript-eslint/explicit-module-boundary-types": "off",
+		},
+	}),
 	{
 		ignores: [
 			".tsup/**/*",
