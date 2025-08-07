@@ -1,3 +1,3 @@
-import { prettier } from "./src/index.js";
+import { prettier } from "./dist/index.js";
 
 export default prettier;

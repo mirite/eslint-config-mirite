@@ -1,3 +1,4 @@
-import { general } from "./src/general.js";
+//@ts-check
+import { general } from "./dist/general.js";
 
 export default [...general];
