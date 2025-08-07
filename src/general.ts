@@ -9,6 +9,12 @@ import tseslint from "typescript-eslint";
 export const general = [
 	eslint.configs.recommended,
 	perfectionist.configs["recommended-natural"],
+	{
+		rules: {
+			"perfectionist/sort-imports": "off", // Conflict with the prettier ordering
+			"perfectionist/sort-named-imports": "off",
+		},
+	},
 	jsdoc.configs["flat/recommended-typescript"],
 	{
 		plugins: {
