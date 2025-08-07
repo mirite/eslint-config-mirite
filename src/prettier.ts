@@ -1,6 +1,19 @@
-const plugins = ["prettier-plugin-packagejson", "prettier-plugin-jsdoc"];
+import type { Config } from "prettier";
 
-export const prettier = {
+const plugins = [
+	"@ianvs/prettier-plugin-sort-imports",
+	"prettier-plugin-packagejson",
+	"prettier-plugin-jsdoc",
+];
+export const prettier: Config = {
+	importOrder: [
+		"<BUILTIN_MODULES>",
+		"<THIRD_PARTY_MODULES>",
+		"",
+		"^@/(.*)$",
+		"^[../]",
+		"^[./]",
+	],
 	plugins,
 	useTabs: true,
 };
@@ -17,7 +30,7 @@ export const prettier = {
  * @param cssPath The path to the root stylesheet that imports Tailwind.
  * @returns The configuration for TW projects.
  */
-export function prettierWithTW(cssPath: string) {
+export function prettierWithTW(cssPath: string): Config {
 	return {
 		...prettier,
 		plugins: [...plugins, "prettier-plugin-tailwindcss"],
