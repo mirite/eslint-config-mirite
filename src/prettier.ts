@@ -17,7 +17,7 @@ export const prettier = {
  * @param cssPath The path to the root stylesheet that imports Tailwind.
  * @returns The configuration for TW projects.
  */
-export function prettierWithTW(cssPath) {
+export function prettierWithTW(cssPath:string) {
 	return {
 		...prettier,
 		plugins: [...plugins, "prettier-plugin-tailwindcss"],
