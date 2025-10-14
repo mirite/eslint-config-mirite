@@ -11,7 +11,7 @@ export const react = [
 			"react-compiler/react-compiler": "error",
 		},
 	},
-	reactHooks.configs["recommended-latest"],
+	reactHooks.default.configs["recommended-latest"],
 	{
 		files: ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
 		plugins: { react: reactLint },

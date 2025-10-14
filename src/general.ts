@@ -3,10 +3,11 @@ import { createTypeScriptImportResolver } from "eslint-import-resolver-typescrip
 import importPlugin from "eslint-plugin-import";
 import jsdoc from "eslint-plugin-jsdoc";
 import perfectionist from "eslint-plugin-perfectionist";
+import { defineConfig } from "eslint/config";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
-export const general = [
+export const general = defineConfig([
 	eslint.configs.recommended,
 	perfectionist.configs["recommended-natural"],
 	{
@@ -106,4 +107,4 @@ export const general = [
 			"playwright-report/**/*",
 		],
 	},
-];
+]);
