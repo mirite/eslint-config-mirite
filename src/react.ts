@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+ 
 import reactLint from "eslint-plugin-react";
 import reactCompiler from "eslint-plugin-react-compiler";
 import reactHooks from "eslint-plugin-react-hooks";
@@ -12,7 +12,6 @@ export const react = [
 			"react-compiler/react-compiler": "error",
 		},
 	},
-	//@ts-expect-error TS2339 Types are wrong for this.
 	reactHooks.configs.flat["recommended-latest"],
 	{
 		files: ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
