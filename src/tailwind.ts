@@ -1,6 +1,7 @@
+import path from "path";
 import tailwindLint from "eslint-plugin-tailwindcss";
 
-export const tailwind = [
+export const getTailwind = (configPath: string) => [
 	...tailwindLint.configs["flat/recommended"],
 	{
 		rules: {
@@ -15,7 +16,9 @@ export const tailwind = [
 		settings: {
 			tailwindcss: {
 				callees: ["classnames", "clsx", "ctl", "twMerge"],
-				classRegex: "^class(Name)?$",
+				config: path.isAbsolute(configPath)
+					? configPath
+					: path.resolve(configPath),
 				cssFiles: [
 					"**/*.css",
 					"!**/node_modules",
@@ -24,11 +27,6 @@ export const tailwind = [
 					"!**/dist",
 					"!**/build",
 				],
-				cssFilesRefreshRate: 5_000,
-				removeDuplicates: true,
-				skipClassAttribute: false,
-				tags: [],
-				whitelist: [],
 			},
 		},
 	},
