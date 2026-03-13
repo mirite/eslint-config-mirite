@@ -2,14 +2,14 @@ import eslint from "@eslint/js";
 import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
 import importPlugin from "eslint-plugin-import";
 import jsdoc from "eslint-plugin-jsdoc";
-import perfectionist from "eslint-plugin-perfectionist";
+import { configs as perfectionist } from "eslint-plugin-perfectionist";
 import { defineConfig } from "eslint/config";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
 export const general = defineConfig([
 	eslint.configs.recommended,
-	perfectionist.configs["recommended-natural"],
+	perfectionist["recommended-natural"],
 	{
 		rules: {
 			"perfectionist/sort-imports": "off", // Conflict with the prettier ordering

@@ -1,7 +1,8 @@
 import path from "path";
+import type { Linter } from "eslint";
 import tailwindLint from "eslint-plugin-tailwindcss";
 
-export const getTailwind = (configPath: string) => [
+export const getTailwind = (configPath: string): Linter.Config[] => [
 	...tailwindLint.configs["flat/recommended"],
 	{
 		rules: {
