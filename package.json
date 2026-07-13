@@ -26,7 +26,7 @@
 			}
 		}
 	},
-	"types": "./dist/esm/index.d.ts",
+	"types": "./dist/index.d.ts",
 	"files": [
 		"dist/**/*"
 	],
@@ -47,7 +47,7 @@
 		"eslint-plugin-react": "^7.37.5",
 		"eslint-plugin-react-compiler": "19.1.0-rc.2",
 		"eslint-plugin-react-hooks": "^7.1.1",
-		"eslint-plugin-tailwindcss": "^4.0.0-beta.0",
+		"eslint-plugin-tailwindcss": "^4.2.0",
 		"globals": "^17.7.0",
 		"prettier-plugin-jsdoc": "^1.8.1",
 		"prettier-plugin-packagejson": "^3.0.2",
@@ -61,12 +61,12 @@
 		"eslint": "^10.7.0",
 		"prettier": "^3.9.5",
 		"tailwindcss": "^4.3.2",
-		"typescript": "^6.0.3"
+		"typescript": "^7.0.2"
 	},
 	"peerDependencies": {
 		"eslint": "^10",
 		"prettier": "^3",
 		"tailwindcss": "^4.2.0"
 	},
-	"packageManager": "yarn@4.14.1"
+	"packageManager": "yarn@4.17.1"
 }

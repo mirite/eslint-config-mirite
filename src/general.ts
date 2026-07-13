@@ -5,7 +5,7 @@ import jsdoc from "eslint-plugin-jsdoc";
 import { configs as perfectionist } from "eslint-plugin-perfectionist";
 import { defineConfig } from "eslint/config";
 import globals from "globals";
-import tseslint from "typescript-eslint";
+//import tseslint from "typescript-eslint";
 
 export const general = defineConfig([
 	eslint.configs.recommended,
@@ -54,7 +54,7 @@ export const general = defineConfig([
 			"import/resolver-next": [createTypeScriptImportResolver({})],
 		},
 	},
-	...tseslint.configs.recommendedTypeChecked,
+	/*...tseslint.configs.recommendedTypeChecked,
 	{
 		languageOptions: {
 			ecmaVersion: 2024,
@@ -89,14 +89,14 @@ export const general = defineConfig([
 			"no-shadow": "off", // Turn off the default no-shadow rule, TS uses its own version.
 			"no-unused-vars": "off", // Turn off the default no-unused-vars rule, TS uses its own version.
 		},
-	},
-	...tseslint.config({
-		extends: [tseslint.configs.disableTypeChecked],
-		files: ["**/*.js"],
-		rules: {
-			"@typescript-eslint/explicit-module-boundary-types": "off",
-		},
-	}),
+	},*/
+	//...tseslint.config({
+	//	extends: [tseslint.configs.disableTypeChecked],
+	//	files: ["**/*.js"],
+	//	rules: {
+	//		"@typescript-eslint/explicit-module-boundary-types": "off",
+	//	},
+	//}),
 	{
 		ignores: [
 			".tsup/**/*",
